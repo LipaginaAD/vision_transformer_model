@@ -37,6 +37,9 @@ def qkv_dot_product(q, k, v, d_model):
   return torch.matmul(softmax, v)
 
 class EmbeddedPatches(nn.Module):
+  """
+  Create pathes from image, embed them, sum with position embeddings
+  """
   def __init__(self, batch_size, patch_size, max_len, d_model):
     super().__init__()
 
